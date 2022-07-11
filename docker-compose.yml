@@ -31,6 +31,7 @@ services:
       - PGDATABASE=postgres
       - PGPASSWORD=postgres_password
       - PGPORT=5432
+      - WATCHPACK_POLLING=true
   client:
     build:
       dockerfile: Dockerfile.dev
@@ -42,6 +43,7 @@ services:
       - WDS_SOCKET_PORT=0
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - WATCHPACK_POLLING=true
   worker:
     build:
       dockerfile: Dockerfile.dev
@@ -52,3 +54,4 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - WATCHPACK_POLLING=true
